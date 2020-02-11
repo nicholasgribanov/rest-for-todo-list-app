@@ -8,4 +8,5 @@ public interface TodoService {
 
     List<Todo> findAll();
     List<Todo> findAllByUsername(String username);
+    Todo deleteById(long id);
 }
