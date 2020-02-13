@@ -10,14 +10,15 @@ import java.util.stream.Collectors;
 
 @Service
 public class TodoServiceImpl implements TodoService {
+    private static int counter = 0;
 
     private static List<Todo> todos = new ArrayList<>();
 
     static {
-        todos.add(new Todo(1, "Igor", "Learn Java", new Date(), false));
-        todos.add(new Todo(2, "Igor", "Learn Angular", new Date(), false));
-        todos.add(new Todo(3, "Igor", "Learn React", new Date(), false));
-        todos.add(new Todo(4, "Sam", "Learn React", new Date(), false));
+        todos.add(new Todo(++counter, "Igor", "Learn Java", new Date(), false));
+        todos.add(new Todo(++counter, "Igor", "Learn Angular", new Date(), false));
+        todos.add(new Todo(++counter, "Igor", "Learn React", new Date(), false));
+        todos.add(new Todo(++counter, "Sam", "Learn React", new Date(), false));
 
     }
 
@@ -37,5 +38,17 @@ public class TodoServiceImpl implements TodoService {
         if (todoForDelete != null)
             todos.remove(todoForDelete);
         return todoForDelete;
+    }
+
+    @Override
+    public Todo save(Todo todo) {
+        if (todo.getId() == -1 || todo.getId() == 0) {
+            todo.setId(++counter);
+            todos.add(todo);
+        } else {
+            todos.remove(todo);
+            todos.add(todo);
+        }
+        return todo;
     }
 }
