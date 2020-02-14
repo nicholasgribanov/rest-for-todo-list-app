@@ -5,6 +5,6 @@ import lombok.Getter;
 
 @Getter
 @AllArgsConstructor
-public class HelloWorld {
+public class BasicAuthBean {
     private String message;
 }
