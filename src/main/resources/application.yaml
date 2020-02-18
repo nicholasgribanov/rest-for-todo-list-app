@@ -5,6 +5,11 @@ spring:
     user:
       name: Igor
       password: Niva
+  jpa:
+    show-sql: true
+  h2:
+    console:
+      enabled: true
 
 jwt:
   signing:

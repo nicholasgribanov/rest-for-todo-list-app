@@ -1,0 +1,8 @@
+INSERT INTO TODO (ID, USERNAME, DESCRIPTION, TARGET_DATE, IS_DONE)
+VALUES (1, 'Igor', 'Learn Angular', sysdate(), false);
+
+INSERT INTO TODO (ID, USERNAME, DESCRIPTION, TARGET_DATE, IS_DONE)
+VALUES (2, 'Igor', 'Learn Spring', sysdate(), false);
+
+INSERT INTO TODO (ID, USERNAME, DESCRIPTION, TARGET_DATE, IS_DONE)
+VALUES (3, 'Igor', 'Learn Galia', sysdate(), false);
